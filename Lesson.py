@@ -28,8 +28,15 @@ class Lesson:
         print("教师号：" + self.teacher_number)
         print("教师名：" + self.teacher_name)
         print("校区：" + self.school_distinct)
-        print("week：" + self.day_of_week)
-        print("学分：" + self.unit)
+        print("课程时间：星期" + {
+            '1': '一',
+            '2': '二',
+            '3': '三',
+            '4': '四',
+            '5': '五',
+            '6': '六',
+            '7': '日',
+        }.get(self.day_of_week) + "第" + self.unit + "节")
         print("lsjs：" + self.lsjs)
         print("教室号：" + self.room_number)
         print("上课周：" + ','.join(map(str, self.weeks)))
