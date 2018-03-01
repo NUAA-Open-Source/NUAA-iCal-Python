@@ -17,7 +17,7 @@ class events to other calendars (e.g. Google Calendar).
 Install `NUAAiCal` python package:
 
 ```bash
-$ pip install NUAAiCal
+$ pip3 install NUAAiCal
 ```
 
 ### Source
@@ -38,6 +38,19 @@ $ nuaaical
 
 You will get the `.ics` file path, you can import it to Google 
 Calendar etc.
+
+# TroubleShoot
+
+## Command Not Found
+
+> nuaaical: command not found
+
+Maybe your system `PATH` environment variable lacks of the value of `~/
+.local/bin` . Try the command following, then run `nuaaical` again:
+
+```bash
+$ export PATH=${HOME}/.local/bin:$PATH
+``` 
 
 ## TODO
 

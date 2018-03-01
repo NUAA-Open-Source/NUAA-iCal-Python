@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='NUAAiCal',
-    version='0.3.4',
+    version='0.3.5',
     description='Generate NUAA curriculum to iCalendar file.',
     url='https://github.com/Triple-Z/NUAA-iCal-Python',
     author='TripleZ',
@@ -40,6 +40,7 @@ setup(
         'lxml==4.1.1',
         'pytz==2018.3',
         'zeep==2.5.0',
+        'icalendar==4.0.1',
     ],
     project_urls={
         'Bug Reports': 'https://github.com/Triple-Z/NUAA-iCal-Python/issues',
