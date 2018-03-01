@@ -1,8 +1,11 @@
 # NUAA iCal Python
 
+![Python Version](https://img.shields.io/badge/python-3.6-blue.svg)
+
+
 :us: English | :cn: [简体中文](/README_zh-hans.md)
 
-## Usage
+## Quick start
 
 Install dependencies:
 
@@ -18,14 +21,15 @@ $ python3 main.py
 
 > ONLY supported by python 3+
 
-Your curriculum is in `target/curriculum.ics`, you can import it to Google 
+Your curriculum will in `target/curriculum.ics`, you can import it to Google 
 Calendar etc.
 
 ## TODO
 
 - [x] Get course table data
 - [x] Generate iCal file
-- [ ] Input Variables
+- [x] Input Variables
+- [ ] GUI
 - [ ] Export to Google Calendar
 - [ ] WSGI server
 
