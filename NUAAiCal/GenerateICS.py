@@ -59,12 +59,12 @@ def create_ics(lessons, semester_start_date):
 
 def export_ics(cal, xn, xq, xh):
 
-    if os.path.exists('target'):
+    if os.path.exists('NUAAiCal-Data'):
         # print('Directory exists.')
         pass
     else:
-        os.mkdir('target')
-    filename = 'target/NUAA-curriculum-' + xn + '-' + xq + '-' + xh + '.ics'
+        os.mkdir('NUAAiCal-Data')
+    filename = 'NUAAiCal-Data/NUAA-curriculum-' + xn + '-' + xq + '-' + xh + '.ics'
     f = open(os.path.join(filename), 'wb')
     f.write(cal.to_ical())
     f.close()
