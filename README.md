@@ -2,8 +2,11 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.6-blue.svg)
 [![pypi package](https://img.shields.io/pypi/v/NUAAiCal.svg)](https://pypi.python.org/pypi/NUAAiCal/)
+![PyPI - Status](https://img.shields.io/pypi/status/NUAAiCal.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/NUAAiCal.svg)
 
+Export the curriculum of NUAA to a `.ics` calendar file, in order to import 
+class events to other calendars (e.g. Google Calendar).
 
 :us: English | :cn: [简体中文](/README_zh-hans.md)
 

@@ -2,9 +2,12 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.6-blue.svg)
 [![pypi package](https://img.shields.io/pypi/v/NUAAiCal.svg)](https://pypi.python.org/pypi/NUAAiCal/)
+![PyPI - Status](https://img.shields.io/pypi/status/NUAAiCal.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/NUAAiCal.svg)
 
 :us: [English](/README.md) | :cn: 简体中文
+
+将南京航空航天大学的课程表（不含体育、实验等课程）导出成 `.ics` 日历格式，以将课程事件导入其他日历软件（如 Google Calendar）。
 
 ## 安装
 
