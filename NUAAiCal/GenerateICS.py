@@ -70,4 +70,4 @@ def export_ics(cal, xn, xq, xh):
     f.close()
     # print('ICS file has successfully exported to \"' + filename + '\".')
 
-    print("日历文件已导出到 \"" + filename + "\"。")
+    print("日历文件已导出到 \"" + os.path.abspath(filename) + "\"。")

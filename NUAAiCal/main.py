@@ -1,12 +1,13 @@
-from zeep import Client
-from lxml import etree
-from Lesson import Lesson
 from datetime import datetime
-from GenerateICS import create_ics, export_ics
-from FindFirstDayofSemester import get_semester_start_date
-import settings
+from . import settings
+from .FindFirstDayofSemester import get_semester_start_date
+from .GenerateICS import create_ics, export_ics
+from .Lesson import Lesson
+from lxml import etree
+from zeep import Client
 
-if __name__ == '__main__':
+
+def main():
 
     client = Client(
         'http://ded.nuaa.edu.cn/NetEa/Services/WebService.asmx?WSDL')

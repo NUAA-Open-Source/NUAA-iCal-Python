@@ -3,3 +3,6 @@ __pycache__
 py3.6
 target
 client_secret.json
+NUAAiCal.egg-info/
+build/
+dist/
