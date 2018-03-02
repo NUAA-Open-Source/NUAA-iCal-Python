@@ -3,10 +3,10 @@
 from __future__ import unicode_literals
 
 from datetime import datetime
-import settings
-from FindFirstDayofSemester import get_semester_start_date
-from GenerateICS import create_ics, export_ics
-from Lesson import Lesson
+from . import settings
+from .FindFirstDayofSemester import get_semester_start_date
+from .GenerateICS import create_ics, export_ics
+from .Lesson import Lesson
 from lxml import etree
 from zeep import Client
 from builtins import input
@@ -35,7 +35,7 @@ def main():
         print('学号: 你的南京航空航天大学学号')
         print("-------- 请填写以下信息 --------")
 
-        xn = input('学年: '.encode('utf-8'))
+        xn = input('学年: ')
 
     if '-' in xn:
 
@@ -48,11 +48,11 @@ def main():
         else:
 
             if not settings.DEBUG:
-                xq = input('学期: '.encode('utf-8'))
+                xq = input('学期: ')
                 if not (xq == '1' or xq == '2'):
                     print("学期输入错误！ 提示：1为上学期，2为下学期！")
                     exit()
-                xh = input('学号: '.encode('utf-8'))
+                xh = input('学号: ')
                 print("==================================================")
 
             semester_start_date = get_semester_start_date(years, xq, client)

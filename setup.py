@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 setup(
     name='NUAAiCal',
-    version='0.4.0',
+    version='0.4.1',
     description='Generate NUAA curriculum to iCalendar file.',
     url='https://github.com/Triple-Z/NUAA-iCal-Python',
     author='TripleZ',
@@ -20,7 +20,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         # 'Programming Language :: Python :: 2',
@@ -32,7 +32,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='NUAA iCalendar ics curriculum iCal schedule calendar',
-    packages=find_packages(),
+    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     entry_points={
         'console_scripts': [
             'nuaaical=NUAAiCal.main:main',
