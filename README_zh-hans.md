@@ -9,6 +9,10 @@
 
 将南京航空航天大学的课程表（不含体育、实验等课程）导出成 `.ics` 日历格式，以将课程事件导入其他日历软件（如 Google Calendar）。
 
+## 快速使用
+
+[![asciicast](https://asciinema.org/a/HNivm2Ax5PpuUx6e5LwMwxffA.png)](https://asciinema.org/a/HNivm2Ax5PpuUx6e5LwMwxffA)
+
 ## 安装
 
 ### PyPI 安装
@@ -37,9 +41,9 @@ $ nuaaical
 
 你将会看到课程表日历 `.ics` 文件的导出路径, 你可以将其导入至 Google 日历等日历程序。
 
-# 疑难解答
+## 疑难解答
 
-## 未找到命令
+### 未找到命令
 
 > nuaaical: command not found
 

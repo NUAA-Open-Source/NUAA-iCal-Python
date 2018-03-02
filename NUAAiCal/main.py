@@ -19,7 +19,7 @@ def main():
 
     print("======== NUAA iCal Python ========")
     print("Repo: https://github.com/Triple-Z/NUAA-iCal-Python")
-    print("Please help me star this project if it is useful~")
+    print("Please help me STAR this project if it is useful~")
     print("Pull requests (PR) welcome!")
 
     if settings.DEBUG:

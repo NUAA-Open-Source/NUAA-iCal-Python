@@ -10,6 +10,10 @@
 Export the curriculum of NUAA to a `.ics` calendar file, in order to import 
 class events to other calendars (e.g. Google Calendar).
 
+## Quick Start
+
+[![asciicast](https://asciinema.org/a/HNivm2Ax5PpuUx6e5LwMwxffA.png)](https://asciinema.org/a/HNivm2Ax5PpuUx6e5LwMwxffA)
+
 ## Installation
 
 ### PyPI
@@ -39,9 +43,9 @@ $ nuaaical
 You will get the `.ics` file path, you can import it to Google 
 Calendar etc.
 
-# TroubleShoot
+## TroubleShoot
 
-## Command Not Found
+### Command Not Found
 
 > nuaaical: command not found
 
