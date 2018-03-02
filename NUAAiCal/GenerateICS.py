@@ -49,10 +49,17 @@ def create_ics(lessons, semester_start_date):
             event.add('dtstamp', datetime.now(tz=timezone('Asia/Shanghai')))
             event.add('location', lesson.room_number.rstrip() + '@' +
                       lesson.school_distinct.rstrip())
-            event.add('description', "教师：" + lesson.teacher_name.rstrip() +
+            try:
+                event.add('description', "教师：" + lesson.teacher_name.rstrip() +
                       "\n" +
                       "课程序号：" + lesson.lesson_order_number.rstrip()
                       + "\n\nPowered by <a href=\"https://github.com/Triple-Z/NUAA-iCal-Python\">NUAA-iCal-Python</a>")
+            except UnicodeDecodeError:
+                details = "教师：".decode('utf-8') + lesson.teacher_name.rstrip()\
+                          + "\n".decode('utf-8') + \
+                         "课程序号：".decode('utf-8') +\
+                      lesson.lesson_order_number.rstrip() + "\n\nPowered by  <a href=\"https://github.com/Triple-Z/NUAA-iCal-Python\">NUAA-iCal-Python</a>".decode('utf-8')
+                event.add('description', details)
 
             cal.add_component(event)
 

@@ -35,7 +35,11 @@ def main():
         print('学号: 你的南京航空航天大学学号')
         print("-------- 请填写以下信息 --------")
 
-        xn = input('学年: ')
+        try:
+            xn = input("学年: ")
+        except UnicodeEncodeError:
+            # fucking python 2.7 unicode
+            xn = input("学年: ".encode('utf-8'))
 
     if '-' in xn:
 
@@ -48,11 +52,20 @@ def main():
         else:
 
             if not settings.DEBUG:
-                xq = input('学期: ')
+                try:
+                    xq = input('学期: ')
+                except UnicodeEncodeError:
+                    xq = input('学期: '.encode('utf-8'))
+
                 if not (xq == '1' or xq == '2'):
                     print("学期输入错误！ 提示：1为上学期，2为下学期！")
                     exit()
-                xh = input('学号: ')
+
+                try:
+                    xh = input('学号: ')
+                except UnicodeEncodeError:
+                    xh = input('学号: '.encode('utf-8'))
+
                 print("==================================================")
 
             semester_start_date = get_semester_start_date(years, xq, client)
