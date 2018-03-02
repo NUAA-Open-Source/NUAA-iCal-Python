@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from icalendar import Calendar, Event, vText
 from datetime import datetime, timedelta
 from pytz import timezone

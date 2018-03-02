@@ -1,10 +1,15 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 from datetime import datetime
-from . import settings
-from .FindFirstDayofSemester import get_semester_start_date
-from .GenerateICS import create_ics, export_ics
-from .Lesson import Lesson
+import settings
+from FindFirstDayofSemester import get_semester_start_date
+from GenerateICS import create_ics, export_ics
+from Lesson import Lesson
 from lxml import etree
 from zeep import Client
+from builtins import input
 
 
 def main():
@@ -29,7 +34,8 @@ def main():
         print('学期: 1 (上学期) / 2 (下学期)')
         print('学号: 你的南京航空航天大学学号')
         print("-------- 请填写以下信息 --------")
-        xn = input('学年: ')
+
+        xn = input('学年: '.encode('utf-8'))
 
     if '-' in xn:
 
@@ -42,11 +48,11 @@ def main():
         else:
 
             if not settings.DEBUG:
-                xq = input('学期: ')
+                xq = input('学期: '.encode('utf-8'))
                 if not (xq == '1' or xq == '2'):
                     print("学期输入错误！ 提示：1为上学期，2为下学期！")
                     exit()
-                xh = input('学号: ')
+                xh = input('学号: '.encode('utf-8'))
                 print("==================================================")
 
             semester_start_date = get_semester_start_date(years, xq, client)
@@ -54,8 +60,6 @@ def main():
             if not semester_start_date:
                 print("未能获得学年 " + xn + " 的校历信息")
                 exit()
-
-
 
             request_data = {
                 'xn': xn,
@@ -107,7 +111,7 @@ def main():
 
                     # Print all lessons in cli
                     # for lesson in lessons:
-                    #     lesson.print()
+                    #     lesson._print()
 
                     cal = create_ics(lessons, semester_start_date)
                     export_ics(cal, xn, xq, xh)

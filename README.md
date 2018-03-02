@@ -1,14 +1,14 @@
 # NUAA iCal Python
 
-![Python Version](https://img.shields.io/badge/python-3.6-blue.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/NUAAiCal.svg)
 [![pypi package](https://img.shields.io/pypi/v/NUAAiCal.svg)](https://pypi.python.org/pypi/NUAAiCal/)
 ![PyPI - Status](https://img.shields.io/pypi/status/NUAAiCal.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/NUAAiCal.svg)
 
+:us: English | :cn: [简体中文](/README_zh-hans.md)
+
 Export the curriculum of NUAA to a `.ics` calendar file, in order to import 
 class events to other calendars (e.g. Google Calendar).
-
-:us: English | :cn: [简体中文](/README_zh-hans.md)
 
 ## Installation
 
@@ -17,7 +17,7 @@ class events to other calendars (e.g. Google Calendar).
 Install `NUAAiCal` python package:
 
 ```bash
-$ pip3 install NUAAiCal
+$ pip install NUAAiCal
 ```
 
 ### Source
@@ -27,7 +27,7 @@ Built it from source code:
 ```bash
 $ git clone https://github.com/Triple-Z/NUAA-iCal-Python.git
 $ cd NUAA-iCal-Python
-$ python3 setup.py install
+$ python setup.py install
 ```
 
 ## Start Application

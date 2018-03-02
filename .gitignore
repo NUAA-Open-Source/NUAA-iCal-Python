@@ -1,8 +1,11 @@
 .idea
+*.py[cod]
 __pycache__
 py3.6
+py2.7
 target
 client_secret.json
 NUAAiCal.egg-info/
 build/
 dist/
+NUAAiCal-Data/

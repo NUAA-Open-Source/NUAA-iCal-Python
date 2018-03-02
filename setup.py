@@ -7,10 +7,9 @@ here = path.abspath(path.dirname(__file__))
 # Get the long description from the README file
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
-
 setup(
     name='NUAAiCal',
-    version='0.3.6',
+    version='0.4.0',
     description='Generate NUAA curriculum to iCalendar file.',
     url='https://github.com/Triple-Z/NUAA-iCal-Python',
     author='TripleZ',
@@ -24,9 +23,12 @@ setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
+        # 'Programming Language :: Python :: 2',
+        # 'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        # 'Programming Language :: Python :: 3',
+        # 'Programming Language :: Python :: 3.4',
+        # 'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
     keywords='NUAA iCalendar ics curriculum iCal schedule calendar',
@@ -37,10 +39,12 @@ setup(
         ],
     },
     install_requires=[
-        'lxml==4.1.1',
-        'pytz==2018.3',
-        'zeep==2.5.0',
-        'icalendar==4.0.1',
+        'future;python_version<"3"',
+        'six',
+        'lxml',
+        'pytz',
+        'zeep',
+        'icalendar',
     ],
     project_urls={
         'Bug Reports': 'https://github.com/Triple-Z/NUAA-iCal-Python/issues',
@@ -48,3 +52,4 @@ setup(
         'Source': 'https://github.com/Triple-Z/NUAA-iCal-Python',
     },
 )
+

@@ -16,7 +16,7 @@
 安装 `NUAAiCal` python 软件包:
 
 ```bash
-$ pip3 install NUAAiCal
+$ pip install NUAAiCal
 ```
 
 ### 源码安装
@@ -26,7 +26,7 @@ $ pip3 install NUAAiCal
 ```bash
 $ git clone https://github.com/Triple-Z/NUAA-iCal-Python.git
 $ cd NUAA-iCal-Python
-$ python3 setup.py install
+$ python setup.py install
 ```
 
 ## 启动程序

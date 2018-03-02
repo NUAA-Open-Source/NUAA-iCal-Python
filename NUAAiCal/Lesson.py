@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class Lesson:
     def __init__(self, year, semester, student_number, lesson_order_number,
                  lesson_number, name, teacher_number, teacher_name,
@@ -17,7 +19,7 @@ class Lesson:
         self.room_number = room_number
         self.weeks = weeks
 
-    def print(self):
+    def _print(self):
         print('=====================================')
         print("学年：" + self.year)
         print("学期：" + self.semester)

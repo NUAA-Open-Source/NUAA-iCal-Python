@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from lxml import etree
 from datetime import datetime, timedelta
 from pytz import timezone

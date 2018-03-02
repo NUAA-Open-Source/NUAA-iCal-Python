@@ -3,13 +3,14 @@ cached-property==1.3.1
 certifi==2018.1.18
 chardet==3.0.4
 defusedxml==0.5.0
+future==0.16.0
 google-api-python-client==1.6.5
 httplib2==0.10.3
 icalendar==4.0.1
 idna==2.6
 isodate==0.6.0
 lxml==4.1.1
--e git+https://github.com/Triple-Z/NUAA-iCal-Python.git@5d633d3b05a0d852810be3805111749eda0f04eb#egg=NUAAiCal
+-e git+https://github.com/Triple-Z/NUAA-iCal-Python.git@5f3f34d766b60956c3a7031527d292ecd9d68ded#egg=NUAAiCal
 oauth2client==4.1.2
 pkginfo==1.4.1
 pyasn1==0.4.2
