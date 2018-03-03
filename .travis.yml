@@ -3,7 +3,9 @@ python:
   - "2.7"
   - "3.6"
 install:
-  - pip install tox
-  - python setup.py install
+#  - pip install tox
+#  - pip install pytest
+#  - python setup.py install
 script:
-  - tox
+#  - pytest --pyargs NUAAiCal
+  - python setup.py test
