@@ -1,6 +1,8 @@
 # NUAA iCal Python
 
+
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/NUAAiCal.svg)
+[![Travis](https://img.shields.io/travis/Triple-Z/NUAA-iCal-Python.svg)](https://travis-ci.org/Triple-Z/NUAA-iCal-Python)
 [![pypi package](https://img.shields.io/pypi/v/NUAAiCal.svg)](https://pypi.python.org/pypi/NUAAiCal/)
 ![PyPI - Status](https://img.shields.io/pypi/status/NUAAiCal.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/NUAAiCal.svg)
