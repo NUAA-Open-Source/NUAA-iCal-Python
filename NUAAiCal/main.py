@@ -26,7 +26,7 @@ def main():
         xn = '2017-2018'
         xq = '2'
         xh = '161540121'
-        semester_start_date = datetime(2018, 2, 26, 0, 0, 0)
+        # semester_start_date = datetime(2018, 2, 26, 0, 0, 0)
         print("==================================================")
     else:
         print("\n输入提示：")
@@ -128,6 +128,7 @@ def main():
 
                     cal = create_ics(lessons, semester_start_date)
                     export_ics(cal, xn, xq, xh)
+                    return True
     else:
         print("学年输入错误: " + xn)
 

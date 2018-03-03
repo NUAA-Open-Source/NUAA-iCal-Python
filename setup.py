@@ -51,5 +51,8 @@ setup(
         'Donate': 'https://blog.triplez.cn/index.php/about',
         'Source': 'https://github.com/Triple-Z/NUAA-iCal-Python',
     },
+    # Use pytest
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
 )
 

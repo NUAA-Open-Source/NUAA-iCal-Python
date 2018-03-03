@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
+from __future__ import unicode_literals
+
 from icalendar import Calendar, Event, vText
 from datetime import datetime, timedelta
 from pytz import timezone
@@ -80,3 +83,4 @@ def export_ics(cal, xn, xq, xh):
     # print('ICS file has successfully exported to \"' + filename + '\".')
 
     print("日历文件已导出到 \"" + os.path.abspath(filename) + "\"。")
+    return True

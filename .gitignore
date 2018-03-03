@@ -9,3 +9,6 @@ NUAAiCal.egg-info/
 build/
 dist/
 NUAAiCal-Data/
+.eggs
+.pytest_cache
+.tox
