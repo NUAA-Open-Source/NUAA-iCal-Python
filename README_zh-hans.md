@@ -26,6 +26,8 @@
 $ pip install NUAAiCal
 ```
 
+> 若有权限问题，请使用 `pip install NUAAiCal --user` 。
+
 ### 源码安装
 
 从源码构建安装:

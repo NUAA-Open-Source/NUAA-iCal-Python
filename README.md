@@ -28,6 +28,8 @@ Install `NUAAiCal` python package:
 $ pip install NUAAiCal
 ```
 
+> If there has a problem caused by permission, please try `pip install NUAAiCal --user` instead.
+
 ### Source
 
 Built it from source code:
