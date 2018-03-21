@@ -68,6 +68,7 @@ $ export PATH=${HOME}/.local/bin:$PATH
 - [x] Generate iCal file
 - [x] Input Variables
 - [x] Pack
+- [x] Calendar Diff
 - [ ] GUI
 - [ ] Export to Google Calendar
 - [ ] WSGI server

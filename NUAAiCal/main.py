@@ -2,17 +2,41 @@
 
 from __future__ import unicode_literals
 
-from datetime import datetime
-from . import settings
-from .FindFirstDayofSemester import get_semester_start_date
-from .GenerateICS import create_ics, export_ics
-from .Lesson import Lesson
+import getopt
+import sys
+from builtins import input
+
 from lxml import etree
 from zeep import Client
-from builtins import input
+
+from NUAAiCal.settings import DEBUG, VERSION
+from NUAAiCal.FindFirstDayofSemester import get_semester_start_date
+from NUAAiCal.GenerateICS import create_ics, export_ics
+from NUAAiCal.Lesson import Lesson
+
+
+def usage():
+    print('''Usage:
+    -v, --version   Check NUAAiCal version
+    -h, --help      Display this help text
+    ''')
 
 
 def main():
+    shortopts = "hv"
+    longopts = ['help', 'version']
+    try:
+        options, args = getopt.getopt(sys.argv[1:], shortopts, longopts)
+        for opt, arg in options:
+            if opt in ('-v', '--version'):
+                print('NUAAiCal ' + VERSION)
+                exit(0)
+            elif opt in ('-h', '--help'):
+                usage()
+                exit(0)
+
+    except getopt.GetoptError:
+        print('hhhhh')
 
     client = Client(
         'http://ded.nuaa.edu.cn/NetEa/Services/WebService.asmx?WSDL')
@@ -22,7 +46,7 @@ def main():
     print("Please help me STAR this project if it is useful~")
     print("Pull requests (PR) welcome!")
 
-    if settings.DEBUG:
+    if DEBUG:
         xn = '2017-2018'
         xq = '2'
         xh = '161540121'
@@ -51,7 +75,7 @@ def main():
             print("学年输入错误: " + xn)
         else:
 
-            if not settings.DEBUG:
+            if not DEBUG:
                 try:
                     xq = input('学期: ')
                 except UnicodeEncodeError:
@@ -117,7 +141,8 @@ def main():
                                             lesson_order_number,
                                             lesson_number, name, teacher_number,
                                             teacher_name,
-                                            school_distinct, day_of_week, unit, lsjs,
+                                            school_distinct, day_of_week, unit,
+                                            lsjs,
                                             room_number, weeks)
 
                         lessons.append(new_lesson)
@@ -131,4 +156,3 @@ def main():
                     return True
     else:
         print("学年输入错误: " + xn)
-

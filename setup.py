@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
+from NUAAiCal.settings import VERSION
 
 here = path.abspath(path.dirname(__file__))
 
@@ -9,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 setup(
     name='NUAAiCal',
-    version='0.4.2',
+    version=VERSION,
     description='Generate NUAA curriculum to iCalendar file.',
     url='https://github.com/Triple-Z/NUAA-iCal-Python',
     author='TripleZ',
@@ -35,7 +36,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     entry_points={
         'console_scripts': [
-            'nuaaical=NUAAiCal.main:main',
+            'nuaaical = NUAAiCal.main:main',
         ],
     },
     install_requires=[
@@ -46,11 +47,6 @@ setup(
         'zeep',
         'icalendar',
     ],
-    project_urls={
-        'Bug Reports': 'https://github.com/Triple-Z/NUAA-iCal-Python/issues',
-        'Donate': 'https://blog.triplez.cn/index.php/about',
-        'Source': 'https://github.com/Triple-Z/NUAA-iCal-Python',
-    },
     # Use pytest
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],

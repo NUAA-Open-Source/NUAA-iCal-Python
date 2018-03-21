@@ -6,6 +6,8 @@ from __future__ import unicode_literals
 from icalendar import Calendar, Event, vText
 from datetime import datetime, timedelta
 from pytz import timezone
+import tempfile
+import hashlib
 import os
 
 
@@ -49,7 +51,7 @@ def create_ics(lessons, semester_start_date):
 
             event.add('dtstart', lesson_start_time)
             event.add('dtend', lesson_end_time)
-            event.add('dtstamp', datetime.now(tz=timezone('Asia/Shanghai')))
+            # event.add('dtstamp', datetime.now(tz=timezone('Asia/Shanghai')))
             event.add('location', lesson.room_number.rstrip() + '@' +
                       lesson.school_distinct.rstrip())
             try:
@@ -70,17 +72,62 @@ def create_ics(lessons, semester_start_date):
 
 
 def export_ics(cal, xn, xq, xh):
+    filename = 'NUAAiCal-Data/NUAA-curriculum-' + xn + '-' + xq + '-' + xh + '.ics'
 
     if os.path.exists('NUAAiCal-Data'):
         # print('Directory exists.')
-        pass
+        if os.path.isfile(filename):
+            # File exists, check whether need to be updated.
+            with tempfile.NamedTemporaryFile() as tem:
+                tem.write(cal.to_ical())
+                tem_filename = tem.name
+                is_update = not is_same(tem_filename, filename)
+            # print(os.path.isfile(tem_filename))
+            if is_update:
+                print('有更新的课程！')
+                f = open(os.path.join(filename), 'wb')
+                f.write(cal.to_ical())
+                f.close()
+                print("更新的日历文件已导出到 \"" + os.path.abspath(filename) + "\"。")
+            else:
+                print('没有需要更新的课程！')
+                print("原有的日历文件位置为 \"" + os.path.abspath(filename) + "\"。")
+
+        else:
+            f = open(os.path.join(filename), 'wb')
+            f.write(cal.to_ical())
+            f.close()
+            print("日历文件已导出到 \"" + os.path.abspath(filename) + "\"。")
     else:
         os.mkdir('NUAAiCal-Data')
-    filename = 'NUAAiCal-Data/NUAA-curriculum-' + xn + '-' + xq + '-' + xh + '.ics'
-    f = open(os.path.join(filename), 'wb')
-    f.write(cal.to_ical())
-    f.close()
-    # print('ICS file has successfully exported to \"' + filename + '\".')
 
-    print("日历文件已导出到 \"" + os.path.abspath(filename) + "\"。")
+        f = open(os.path.join(filename), 'wb')
+        f.write(cal.to_ical())
+        f.close()
+        # print('ICS file has successfully exported to \"' + filename + '\".')
+        print("日历文件已导出到 \"" + os.path.abspath(filename) + "\"。")
+
     return True
+
+
+def is_same(file1, file2):
+    with open(file1, 'rb') as f1:
+        f1_data = f1.read()
+    hash1 = hashlib.md5()
+    hash1.update(f1_data)
+    md5_1 = hash1.hexdigest()
+    # print(f1.name)
+    # print(md5_1)
+
+    with open(file2, 'rb') as f2:
+        f2_data = f2.read()
+    hash2 = hashlib.md5()
+    hash2.update(f2_data)
+    md5_2 = hash2.hexdigest()
+    # print(f2.name)
+    # print(md5_2)
+
+    if md5_1 == md5_2:
+        return True
+    else:
+        return False
