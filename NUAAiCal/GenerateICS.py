@@ -81,7 +81,8 @@ def export_ics(cal, xn, xq, xh):
             with tempfile.NamedTemporaryFile(mode='w+b', delete=True) as tem:
                 tem.write(cal.to_ical())
                 tem_filename = tem.name
-                print(getsizeof(tem.read()))  # fix a py2.7 bug... issue#2
+                tem.read()  # fix a py2.7 bug... issue#2
+                # print(getsizeof(tem.read()))
                 is_update = not is_same(tem_filename, filename)
             # print(os.path.isfile(tem_filename))
             if is_update:
@@ -115,24 +116,24 @@ def is_same(file1, file2):
     hash1 = hashlib.md5()
     with open(file1, 'rb') as f1:
         f1_data = f1.read()
-        print(getsizeof(f1_data))
+        # print(getsizeof(f1_data))
     hash1.update(f1_data)
     md5_1 = hash1.hexdigest()
     # print(f1_data)
-    print(f1.name)
-    print(md5_1)
+    # print(f1.name)
+    # print(md5_1)
 
     hash2 = hashlib.md5()
     with open(file2, 'rb') as f2:
         f2_data = f2.read()
-        print(getsizeof(f2_data))
+        # print(getsizeof(f2_data))
     hash2.update(f2_data)
     md5_2 = hash2.hexdigest()
     # print(f2_data)
-    print(f2.name)
-    print(md5_2)
+    # print(f2.name)
+    # print(md5_2)
 
-    print(f1_data == f2_data)
+    # print(f1_data == f2_data)
 
     if md5_1 == md5_2:
         return True

@@ -36,7 +36,7 @@ def main():
                 exit(0)
 
     except getopt.GetoptError:
-        print('hhhhh')
+        pass
 
     client = Client(
         'http://ded.nuaa.edu.cn/NetEa/Services/WebService.asmx?WSDL')
