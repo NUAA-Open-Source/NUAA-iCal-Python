@@ -56,12 +56,16 @@ def create_ics(lessons, semester_start_date):
                       lesson.school_distinct.rstrip())
             try:
                 event.add('description', "教师：" + lesson.teacher_name.rstrip() +
-                      "\n" +
-                      "课程序号：" + lesson.lesson_order_number.rstrip()
-                      + "\n\nPowered by <a href=\"https://github.com/Triple-Z/NUAA-iCal-Python\">NUAA-iCal-Python</a>")
+                      "\n" + \
+                      "当前周次：%d" % week + \
+                          "\n上课周次：%d-%d" % (lesson.weeks[0], lesson.weeks[-1]) +
+                      "课程序号：" + lesson.lesson_order_number.rstrip() + \
+                      "\n\nPowered by <a href=\"https://github.com/Triple-Z/NUAA-iCal-Python\">NUAA-iCal-Python</a>")
             except UnicodeDecodeError:
                 details = "教师：".decode('utf-8') + lesson.teacher_name.rstrip()\
                           + "\n".decode('utf-8') + \
+                          "当前周次：".decode('utf-8') + week + \
+                          "\n上课周次：".decode('utf-8') + weeks[0] + "-".decode('utf-8') + week[-1] + \
                          "课程序号：".decode('utf-8') +\
                       lesson.lesson_order_number.rstrip() + "\n\nPowered by  <a href=\"https://github.com/Triple-Z/NUAA-iCal-Python\">NUAA-iCal-Python</a>".decode('utf-8')
                 event.add('description', details)

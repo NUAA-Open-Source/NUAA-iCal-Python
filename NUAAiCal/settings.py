@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-DEBUG = True
+DEBUG = False
 
 VERSION = '0.5.2'
