@@ -9,7 +9,7 @@ httplib2==0.10.3
 icalendar==4.0.1
 idna==2.6
 isodate==0.6.0
-lxml==4.1.1
+lxml
 -e git+https://github.com/Triple-Z/NUAA-iCal-Python.git@5f3f34d766b60956c3a7031527d292ecd9d68ded#egg=NUAAiCal
 oauth2client==4.1.2
 pkginfo==1.4.1

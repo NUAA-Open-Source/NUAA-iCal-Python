@@ -78,13 +78,18 @@ def export_ics(cal, xn, xq, xh):
         # print('Directory exists.')
         if os.path.isfile(filename):
             # File exists, check whether need to be updated.
-            with tempfile.NamedTemporaryFile(mode='w+b', delete=True) as tem:
-                tem.write(cal.to_ical())
-                tem_filename = tem.name
-                tem.read()  # fix a py2.7 bug... issue#2
-                # print(getsizeof(tem.read()))
-                is_update = not is_same(tem_filename, filename)
-            # print(os.path.isfile(tem_filename))
+
+            tem = open('.temp', 'w+b')
+            tem_path = os.path.abspath(tem.name)
+            tem.write(cal.to_ical())
+            tem_filename = tem.name
+            tem.read()  # fix a py2.7 bug... issue#2
+            tem.close()
+            # print(getsizeof(tem.read()))
+            is_update = not is_same(tem_path, filename)
+            # print("Temp file name is %s, in %s" % (tem_filename, os.path.abspath(tem_filename)))
+            os.remove(tem_path)
+
             if is_update:
                 print('有更新的课程！')
                 f = open(os.path.join(filename), 'wb')
@@ -116,11 +121,11 @@ def is_same(file1, file2):
     hash1 = hashlib.md5()
     with open(file1, 'rb') as f1:
         f1_data = f1.read()
-        # print(getsizeof(f1_data))
+    # print(getsizeof(f1_data))
     hash1.update(f1_data)
     md5_1 = hash1.hexdigest()
     # print(f1_data)
-    # print(f1.name)
+    # print(file1.name)
     # print(md5_1)
 
     hash2 = hashlib.md5()

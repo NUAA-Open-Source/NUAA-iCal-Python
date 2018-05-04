@@ -12,3 +12,4 @@ NUAAiCal-Data/
 .eggs
 .pytest_cache
 .tox
+.vscode
