@@ -6,6 +6,7 @@
 [![pypi package](https://img.shields.io/pypi/v/NUAAiCal.svg)](https://pypi.python.org/pypi/NUAAiCal/)
 ![PyPI - Status](https://img.shields.io/pypi/status/NUAAiCal.svg)
 ![PyPI - License](https://img.shields.io/pypi/l/NUAAiCal.svg)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FNUAA-Open-Source%2FNUAA-iCal-Python.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FNUAA-Open-Source%2FNUAA-iCal-Python?ref=badge_shield)
 
 :us: English | :cn: [简体中文](/README_zh-hans.md)
 
@@ -78,3 +79,7 @@ $ export PATH=${HOME}/.local/bin:$PATH
 This project is licensed by [The MIT License](/LICENSE.md).
 
 Copyright &copy; 2018 [TripleZ](https://github.com/Triple-Z)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FNUAA-Open-Source%2FNUAA-iCal-Python.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FNUAA-Open-Source%2FNUAA-iCal-Python?ref=badge_large)
