@@ -44,7 +44,8 @@ setup(
         'six',
         'lxml',
         'pytz',
-        'zeep',
+        'zeep==2.5.0;python_version<"3"',
+        'zeep;python_version>="3"',
         'icalendar',
     ],
     # Use pytest
