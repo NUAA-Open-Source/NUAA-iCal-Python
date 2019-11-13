@@ -8,6 +8,8 @@
 
 :us: [English](/README.md) | :cn: 简体中文
 
+⚠️ **由于南京航空航天大学教务处接口变化，该程序使用的接口已无效。请使用其它方式获得课表的程序如 [miaotony/NUAA_ClassSchedule](https://github.com/miaotony/NUAA_ClassSchedule)。感谢你们的支持！**
+
 将南京航空航天大学的课程表（不含体育、实验等课程）导出成 `.ics` 日历格式，以将课程事件导入其他日历软件（如 Google Calendar）。
 
 欢迎贡献代码，提交 `PR`！
