@@ -10,6 +10,8 @@
 
 :us: English | :cn: [简体中文](/README_zh-hans.md)
 
+:warning: **The NUAA curriculum APIs have been deprecated, so this program DO NOT WORK for now. Please see this repo [miaotony/NUAA_ClassSchedule](https://github.com/miaotony/NUAA_ClassSchedule) for your alternative.**
+
 Export the curriculum of NUAA to a `.ics` calendar file, in order to import 
 class events to other calendars (e.g. Google Calendar).
 
